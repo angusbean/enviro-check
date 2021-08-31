@@ -1,36 +1,18 @@
 package main
 
 import (
-	"log"
 	"os"
 
 	"github.com/angusbean/enviro-check/pkg/configs"
 	"github.com/angusbean/enviro-check/pkg/middleware"
 	"github.com/angusbean/enviro-check/pkg/routes"
 	"github.com/angusbean/enviro-check/pkg/utils"
-	"github.com/go-redis/redis"
 	"github.com/gofiber/fiber/v2"
 
 	_ "github.com/create-go-app/fiber-go-template/docs" // load API Docs files (Swagger)
 
-	"github.com/joho/godotenv"
 	_ "github.com/joho/godotenv/autoload" // load .env file automatically
 )
-
-func init() {
-	if err := godotenv.Load(); err != nil {
-		log.Print("No .env file found")
-	}
-}
-
-func NewRedisDB(host, port, password string) *redis.Client {
-	redisClient := redis.NewClient(&redis.Options{
-		Addr:     host + ":" + port,
-		Password: password,
-		DB:       0,
-	})
-	return redisClient
-}
 
 func main() {
 	// Define Fiber config.

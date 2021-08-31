@@ -2,7 +2,7 @@ package utils
 
 import (
 	"github.com/go-playground/validator/v10"
-	"github.com/twinj/uuid"
+	"github.com/google/uuid"
 )
 
 // NewValidator func for create a new validator for model fields.
