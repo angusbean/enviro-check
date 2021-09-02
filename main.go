@@ -21,6 +21,8 @@ func main() {
 	// Define a new Fiber app with config.
 	app := fiber.New(config)
 
+	//
+
 	// Middlewares.
 	middleware.FiberMiddleware(app) // Register Fiber's middleware for app.
 
