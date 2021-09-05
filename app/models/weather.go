@@ -34,5 +34,5 @@ type WeatherUpdate struct {
 
 type Coord struct {
 	Lat  float64 `json:"lat"`
-	Long float64 `json:"long"`
+	Long float64 `json:"lon"`
 }

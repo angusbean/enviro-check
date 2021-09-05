@@ -7,6 +7,7 @@ import (
 	"github.com/angusbean/enviro-check/pkg/middleware"
 	"github.com/angusbean/enviro-check/pkg/routes"
 	"github.com/angusbean/enviro-check/pkg/utils"
+	"github.com/angusbean/enviro-check/platform/openweather"
 	"github.com/gofiber/fiber/v2"
 
 	_ "github.com/create-go-app/fiber-go-template/docs" // load API Docs files (Swagger)
@@ -21,10 +22,11 @@ func main() {
 	// Define a new Fiber app with config.
 	app := fiber.New(config)
 
-	//
-
 	// Middlewares.
 	middleware.FiberMiddleware(app) // Register Fiber's middleware for app.
+
+	// Clear and update the db with json OpenWeather city list
+	openweather.UpdateOpenWeatherDB()
 
 	// Routes.
 	routes.SwaggerRoute(app)  // Register a route for API Docs (Swagger).

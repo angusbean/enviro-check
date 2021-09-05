@@ -1,23 +1,43 @@
 {
     "citylist": [   
         {
-            "id": 833,
+            "id": 1,
             "name": "test-city",
             "state": "",
             "country": "IR",
             "coord": {
-                "lon": 100.00,
-                "lat": 100.00
+                "lon": 10.00,
+                "lat": 10.00
             }
         },
         {
-            "id": 1000,
+            "id": 50,
             "name": "test-city-2",
             "state": "",
             "country": "AQ",
             "coord": {
                 "lon": 25.00,
                 "lat": 25.00
+            }
+        },
+        {
+            "id": 100,
+            "name": "test-city-3",
+            "state": "",
+            "country": "IR",
+            "coord": {
+                "lon": 50.00,
+                "lat": 50.00
+            }
+        },
+        {
+            "id": 1000,
+            "name": "test-city-4",
+            "state": "",
+            "country": "AQ",
+            "coord": {
+                "lon": 80.00,
+                "lat": 80.00
             }
         }
     ]

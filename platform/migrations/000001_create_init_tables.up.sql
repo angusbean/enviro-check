@@ -17,5 +17,17 @@ CREATE TABLE users (
     user_role VARCHAR (25) NOT NULL
 );
 
+CREATE TABLE cities (
+    id INT PRIMARY KEY,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW (),
+    updated_at TIMESTAMP NULL,
+    city_name VARCHAR,
+    country VARCHAR,
+    lat FLOAT,
+    long FLOAT
+);
+
+}
+
 -- Add indexes
 CREATE INDEX active_users ON users (id) WHERE user_status = 1;

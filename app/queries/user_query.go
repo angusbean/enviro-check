@@ -2,7 +2,7 @@ package queries
 
 import (
 	"github.com/angusbean/enviro-check/app/models"
-	"github.com/gofrs/uuid"
+	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"
 )
 
