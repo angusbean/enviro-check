@@ -12,6 +12,9 @@ func PrivateRoutes(a *fiber.App) {
 	// Create routes group by API version
 	route := a.Group("/api/v1")
 
+	//Routes for GET  method:
+	route.Get("/update-cities", controllers.UpdateCities)
+
 	// Routes for POST method:
 	route.Post("/request-weather", controllers.RequestWeather)                       // request weather information
 	route.Post("/user/sign/out", middleware.JWTProtected(), controllers.UserSignOut) // de-authorization user

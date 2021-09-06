@@ -1,4 +1,4 @@
-package openweather
+package controllers
 
 import (
 	"encoding/json"
@@ -8,9 +8,11 @@ import (
 
 	"github.com/angusbean/enviro-check/app/models"
 	"github.com/angusbean/enviro-check/platform/database"
+	"github.com/gofiber/fiber/v2"
 )
 
-func UpdateOpenWeatherDB() {
+func UpdateCities(c *fiber.Ctx) error {
+
 	// Create database connection.
 	db, err := database.OpenDBConnection()
 	if err != nil {
@@ -38,4 +40,10 @@ func UpdateOpenWeatherDB() {
 
 	// Insert struct into db to populate db with list of cities
 	db.InsertCityInfo(cityList)
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"error": false,
+		"msg":   "Successfully updated cities table in database",
+	})
+
 }
